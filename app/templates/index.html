@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Rock Paper Scissors</h1>
+
+    <form action="/rock/scissors" method="post">
+        <label for="player1name">Player 1 Name</label>
+        <input type="text" name="player1name" id="player1name">
+        <label for="Katiechoice">Player 1 Choice</label>
+        <input type="text" name="Katiechoice" id="Katiechoice">
+        <label for="player2name">Player 2 Name</label>
+        <input type="text" name="player2name" id="player2name">
+        <label for="Tomchoice">Player 2 Choice</label>
+        <input type="text" name="Tomchoice" id="Tomchoice">
+        <input type="submit" value="Play">
+    </form>
+    <!-- {% for game in games %} -->
+    <div>
+        <p>
+            {{ feedback }}
+        </p>
+    </div>
+    <!-- {% endfor %} -->
+{% endblock %}
