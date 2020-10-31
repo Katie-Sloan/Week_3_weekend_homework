@@ -18,7 +18,19 @@ class Game():
     
     def return_winner(self, player1, player2):
         if self.player1.choice == "rock" and self.player2.choice == "paper":
-            return f"{self.player2.name} wins with {self.player2.choice}!"
+            return self.player2 
+        # elif self.player1.choice == "rock" and self.player2.choice == "scissors":
+        #     return f"{self.player1.name} wins with {self.player1.choice}!"
+        # elif self.player1.choice == "paper" and self.player2.choice == "rock":
+        #     return f"{self.player1.name} wins with {self.player1.choice}!"   
+        # elif self.player1.choice == "paper" and self.player2.choice == "scissors":
+        #     return f"{self.player2.name} wins with {self.player2.choice}!"      
+        # elif self.player1.choice == "scissors" and self.player2.choice == "rock":
+        #     return f"{self.player2.name} wins with {self.player2.choice}!" 
+        # elif self.player1.choice == "scissors" and self.player2.choice == "paper":
+        #     return f"{self.player1.name} wins with {self.player1.choice}!" 
+        # else:
+        #     return "It's a draw!"
     
     def add_game(self, game):
         self.games.append(game)
@@ -28,21 +40,7 @@ class Game():
         
             
     
-    # def check_winner(katie, tom):
-    #     if katie.choice == "rock" and tom.choice == "paper":
-    #         return f"{tom.name} wins with {tom.choice}!"
-    #     elif Katiechoice == "rock" and Tomchoice == "scissors":
-    #         return "Player 1 wins!"
-    #     elif Katiechoice == "paper" and Tomchoice == "rock":
-    #         return "Player 1 wins!"   
-    #     elif Katiechoice == "paper" and Tomchoice == "scissors":
-    #         return "Player 2 wins!"     
-    #     elif Katiechoice == "scissors" and Tomchoice == "rock":
-    #         return "Player 2 wins!"
-    #     elif Katiechoice == "scissors" and Tomchoice == "paper":
-    #         return "Player 1 wins!"
-    #     if:
-    #         return "It's a draw"
+   
 
        
    

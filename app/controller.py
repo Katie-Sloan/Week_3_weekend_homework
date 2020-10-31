@@ -9,8 +9,8 @@ from app.models.player import *
 def index():
     return render_template('index.html', title="Home")
 
-@app.route('/rock/scissors', methods=['POST'])
-def check_winner(): 
+@app.route('/<Katiechoice>/<Tomchoice>', methods=['POST'])
+def check_winner(Katiechoice, Tomchoice): 
     player1name = request.form['player1name']
     player2name = request.form['player2name']
     Katiechoice = request.form['Katiechoice']
@@ -18,5 +18,10 @@ def check_winner():
     player1 = Player(name=player1name, choice=Katiechoice)
     player2 = Player(name=player2name, choice=Tomchoice)
     game = Game(player1=player1, player2=player2)
-    return game.return_winner(player1, player2)
-    return render_template('index.html', title='Home', feedback=game.return_winner(player1, player2))
+    if game.return_winner(player1, player2) == player1:
+        return f"Player 1 wins! {Katiechoice} beats {Tomchoice}"
+    if game.return_winner(player1, player2) == player2:
+        return f"Player 2 wins! {Tomchoice} beats {Katiechoice}"
+
+    
+    return render_template('index.html', title='Home', player1=player1, player2=player2, feedback=game.return_winner(player1, player2))

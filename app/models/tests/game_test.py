@@ -16,4 +16,4 @@ class TestGame(unittest.TestCase):
     
     def test_paper_beats_rock(self):
         self.game.return_winner(self.player1, self.player2)
-        self.assertEqual(f"{self.player2.name} wins with {self.player2.choice}!", self.game.return_winner(self.player1, self.player2))
+        self.assertEqual(self.player2, self.game.return_winner(self.player1, self.player2))
